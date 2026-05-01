@@ -12,7 +12,8 @@ const SuggestionVideoCard = ({ video }) => {
                 <div className="relative h-24 lg:h-20 xl:h-24 w-40 min-w-[168px] lg:w-32 lg:min-w-[128px] xl:w-40 xl:min-w-[168px] rounded-xl bg-slate-800 overflow-hidden">
                     <img
                         className="h-full w-full object-cover"
-                        src={video?.thumbnails[0]?.url}
+                        src={video?.thumbnails?.[0]?.url}
+                        alt={video?.title}
                     />
                     {video?.lengthSeconds && (
                         <VideoLength time={video?.lengthSeconds} />
@@ -24,7 +25,7 @@ const SuggestionVideoCard = ({ video }) => {
                     </span>
                     <span className="text-[12px] lg:text-[10px] xl:text-[12px] font-semibold mt-2 text-white/[0.7] flex items-center">
                         {video?.author?.title}
-                        {video?.author?.badges[0]?.type ===
+                        {video?.author?.badges?.[0]?.type ===
                             "VERIFIED_CHANNEL" && (
                             <BsFillCheckCircleFill className="text-white/[0.5] text-[12px] lg:text-[10px] xl:text-[12px] ml-1" />
                         )}

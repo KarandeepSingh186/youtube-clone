@@ -9,6 +9,7 @@ import { IoIosSearch } from "react-icons/io";
 import { RiVideoAddLine } from "react-icons/ri";
 import { FiBell } from "react-icons/fi";
 import { CgClose } from "react-icons/cg";
+import { FaUserCircle } from "react-icons/fa";
 
 import { Context } from "../context/contextApi";
 import Loader from "../shared/loader";
@@ -55,7 +56,7 @@ const Header = () => {
                 )}
                 <Link to="/" className="flex h-5 items-center">
                     <img
-                        className="h-full hidden dark:md:block"
+                        className="h-full hidden md:block"
                         src={ytLogo}
                         alt="Youtube"
                     />
@@ -96,8 +97,8 @@ const Header = () => {
                         <FiBell className="text-white text-xl cursor-pointer" />
                     </div>
                 </div>
-                <div className="flex h-8 w-8 overflow-hidden rounded-full md:ml-4">
-                    <img src="https://xsgames.co/randomusers/assets/avatars/female/67.jpg" />
+                <div className="flex h-8 w-8 items-center justify-center rounded-full overflow-hidden md:ml-4">
+                    <FaUserCircle className="text-white text-4xl" />
                 </div>
             </div>
         </div>

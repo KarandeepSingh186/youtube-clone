@@ -12,7 +12,8 @@ const VideoCard = ({ video }) => {
                 <div className="relative h-48 md:h-40 md:rounded-xl overflow-hidden">
                     <img
                         className="h-full w-full object-cover"
-                        src={video?.thumbnails[0]?.url}
+                        src={video?.thumbnails?.[0]?.url}
+                        alt={video?.title}
                     />
                     {video?.lengthSeconds && (
                         <VideoLength time={video?.lengthSeconds} />
@@ -23,7 +24,8 @@ const VideoCard = ({ video }) => {
                         <div className="flex h-9 w-9 rounded-full overflow-hidden">
                             <img
                                 className="h-full w-full object-cover"
-                                src={video?.author?.avatar[0]?.url}
+                                src={video?.author?.avatar?.[0]?.url}
+                                alt={video?.author?.title}
                             />
                         </div>
                     </div>
@@ -33,7 +35,7 @@ const VideoCard = ({ video }) => {
                         </span>
                         <span className="text-[12px] font-semibold mt-2 text-white/[0.7] flex items-center">
                             {video?.author?.title}
-                            {video?.author?.badges[0]?.type ===
+                            {video?.author?.badges?.[0]?.type ===
                                 "VERIFIED_CHANNEL" && (
                                 <BsFillCheckCircleFill className="text-white/[0.5] text-[12px] ml-1" />
                             )}
